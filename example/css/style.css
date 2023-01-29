@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.wrap {
+    position: relative;
+    width: 96%;
+    max-width: 600px;
+    padding: 0 60px;
+}
+
+.next, .previous {
+    display: block;
+    position: absolute;
+    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    transition: box-shadow .3s;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.previous {
+    left: 0;
+}
+.next {
+    right: 0;
+}
+
+.next:hover, 
+.next:active, 
+.next:focus, 
+.previous:hover,
+.previous:active,
+.previous:focus {
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+}
+
+
+.motorcycle {
+    max-width: 100%;
+    box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.3);
+    padding: 1rem;
+    border-radius: .7rem;
+}
+
+.motorcycle__img img {
+    max-width: 100%;
+}
+
+.motorcycle__title {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    padding: .4rem 1rem;
+    border-radius: .3rem;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    background-color: rgb(56, 55, 55);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+}
+
+.motorcycle__feature__list li {
+    color: rgb(66, 66, 66);
+    list-style: none;
+    margin-bottom: .3rem;
+}
+
+.motorcycle__feature__list li span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: .4rem;
+    border-radius: .2rem;
+    font-size: 1rem;
+    color: white;
+}
+.motorcycle__feature__list li:nth-child(1) span {
+    background-color: rgb(221, 148, 148);
+}
+.motorcycle__feature__list li:nth-child(2) span {
+    background-color: rgb(171, 218, 159);
+}
+.motorcycle__feature__list li:nth-child(3) span {
+    background-color: rgb(181, 170, 221);
+} 
