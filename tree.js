@@ -1,12 +1,7 @@
-
-const isElement = (element) => 
-	element instanceof Element || element instanceof HTMLDocument;
-
-
 /**
- * @param {string} element
- * @param {object} attributes
- * @param {Array<HTMLElement|string>} childs
+ * @param {string} element the type of element you want to create 
+ * @param {object} attributes receives the attributes of always also events which are executed internally with "addEventListener" the function differentiates between an attribute and an event if the value of this is a function
+ * @param {Array<HTMLElement|string>} childs All of the above recursively, you can condition the rendering of a child element [ undefined && tree( 'div' ) ], that element will never be displayed since the condition has been evaluated to false. 
  * 
  * @return {HTMLElement}
  */
@@ -25,9 +20,9 @@ const tree = (element, attributes={}, childs=false) => {
 
     if(childs) {
         for (const child of childs) {
-            if (child == false && !isElement(child)) continue; 
+            if ( !child ) continue; 
 
-            if (typeof child === 'string' || child instanceof String) {
+            if ( typeof child === 'string' || child instanceof String ) {
                 textNode = document.createTextNode(child);
                 newElement.appendChild(textNode);
                 continue;
